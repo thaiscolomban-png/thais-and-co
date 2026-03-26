@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Thaïs & Co - Pet Sitting & Photographie Animale</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --beige: #f5f0e6;
+      --green: #1f3d2b;
+      --light-green: #3e6b4a;
+      --accent: #d6c7a1;
+      --text: #2b2b2b;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: var(--beige);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    h1, h2, h3 {
+      font-family: 'Playfair Display', serif;
+    }
+
+    header {
+      position: fixed;
+      width: 100%;
+      top: 0;
+      background: rgba(31,61,43,0.9);
+      backdrop-filter: blur(10px);
+      color: white;
+      padding: 15px 40px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      z-index: 1000;
+    }
+
+    nav a {
+      color: white;
+      margin-left: 25px;
+      text-decoration: none;
+      font-weight: 500;
+      position: relative;
+    }
+
+    nav a::after {
+      content: "";
+      position: absolute;
+      width: 0%;
+      height: 2px;
+      background: var(--accent);
+      bottom: -5px;
+      left: 0;
+      transition: 0.3s;
+    }
+
+    nav a:hover::after {
+      width: 100%;
+    }
+
+    .hero {
+      height: 100vh;
+      background: url('https://images.unsplash.com/photo-1558788353-f76d92427f16') center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      color: white;
+      position: relative;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0,0,0,0.4);
+    }
+
+    .hero-content {
+      position: relative;
+      animation: fadeUp 1.5s ease;
+    }
+
+    .hero h1 {
+      font-size: 3.5em;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 1.2em;
+      margin-bottom: 30px;
+    }
+
+    .btn {
+      background: var(--accent);
+      color: var(--green);
+      padding: 12px 25px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 500;
+      transition: 0.3s;
+    }
+
+    .btn:hover {
+      background: white;
+    }
+
+    section {
+      padding: 100px 20px;
+      max-width: 1100px;
+      margin: auto;
+    }
+
+    h2 {
+      color: var(--green);
+      margin-bottom: 30px;
+      text-align: center;
+    }
+
+    .services {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 30px;
+    }
+
+    .card {
+      background: white;
+      padding: 30px;
+      border-radius: 20px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.08);
+      transition: 0.4s;
+    }
+
+    .card:hover {
+      transform: translateY(-10px);
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 15px;
+    }
+
+    .gallery img {
+      width: 100%;
+      border-radius: 15px;
+      transition: 0.4s;
+    }
+
+    .gallery img:hover {
+      transform: scale(1.05);
+    }
+
+    .about {
+      text-align: center;
+      max-width: 700px;
+      margin: auto;
+    }
+
+    .contact form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    input, textarea {
+      padding: 12px;
+      border-radius: 10px;
+      border: 1px solid #ccc;
+    }
+
+    button {
+      background-color: var(--green);
+      color: white;
+      padding: 12px;
+      border: none;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: 0.3s;
+    }
+
+    button:hover {
+      background: var(--light-green);
+    }
+
+    footer {
+      background-color: var(--green);
+      color: white;
+      text-align: center;
+      padding: 30px;
+    }
+
+    @keyframes fadeUp {
+      from {
+        opacity: 0;
+        transform: translateY(30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Thaïs & Co</h1>
+  <nav>
+    <a href="#services">Services</a>
+    <a href="#gallery">Galerie</a>
+    <a href="#about">À propos</a>
+    <a href="#contact">Contact</a>
+  </nav>
+</header>
+
+<div class="hero">
+  <div class="hero-content">
+    <h1>Thaïs & Co</h1>
+    <p>Pet Sitting & Photographie Animale haut de gamme</p>
+    <a href="#contact" class="btn">Réserver</a>
+  </div>
+</div>
+
+<section id="services">
+  <h2>Services</h2>
+  <div class="services">
+    <div class="card">
+      <h3>Pet Sitting</h3>
+      <p>Garde à domicile personnalisée avec suivi quotidien et respect du rythme de votre animal.</p>
+    </div>
+    <div class="card">
+      <h3>Photographie</h3>
+      <p>Séances naturelles et élégantes pour capturer l’essence de votre compagnon.</p>
+    </div>
+    <div class="card">
+      <h3>Bien-être</h3>
+      <p>Soins, attention et présence pour garantir sérénité et sécurité.</p>
+    </div>
+  </div>
+</section>
+
+<section id="gallery">
+  <h2>Galerie</h2>
+  <div class="gallery">
+    <img src="https://images.unsplash.com/photo-1517849845537-4d257902454a">
+    <img src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b">
+    <img src="https://images.unsplash.com/photo-1518717758536-85ae29035b6d">
+  </div>
+</section>
+
+<section id="about" class="about">
+  <h2>À propos</h2>
+  <p>
+    Passionnée par les animaux et la photographie, je propose des services sur mesure pour répondre aux besoins de chaque compagnon. Thaïs & Co, c’est une approche douce, professionnelle et attentive.
+  </p>
+</section>
+
+<section id="contact" class="contact">
+  <h2>Contact</h2>
+  <form>
+    <input type="text" placeholder="Nom" required>
+    <input type="email" placeholder="Email" required>
+    <textarea placeholder="Votre message" rows="5" required></textarea>
+    <button type="submit">Envoyer</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2026 Thaïs & Co</p>
+</footer>
+
+</body>
+</html>
+
